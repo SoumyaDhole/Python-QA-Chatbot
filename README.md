@@ -14,6 +14,12 @@ The primary chatbot uses a predefined knowledge base, TF-IDF, and cosine similar
 - A compact chat interface with topic prompts, scrollable conversation history, code formatting, a clear-conversation action, and answer-source details hidden until requested.
 - Local-first operation with no API key or paid service.
 
+## Screenshots
+
+![Chatbot overview](screenshots/chatbot-overview.png)
+
+![Example chatbot response](screenshots/chatbot-response.png)
+
 ## Technologies
 
 - Python 3.10 or newer
@@ -80,4 +86,4 @@ Remove-Item Env:PYTEST_ADDOPTS
 
 ## Limitations and future improvements
 
-The bot only answers covered topics, does not generate new explanations, and supports a deliberately narrow set of follow-up patterns. A future improvement could add reviewed knowledge-base entries, feedback-driven evaluation cases, or an optional separately configured generative fallback. Such a fallback is not included or required by this project.
+The bot is limited to topics and answers in its curated knowledge base; it is not a general-purpose Python assistant and does not execute code. Similarity scores are ranking signals rather than probabilities, so a close match may still be wrong; questions below the threshold or ambiguous across topics are left unanswered. Follow-up handling is deterministic and recognizes only a limited set of patterns, and its additional explanations and examples come from predefined templates and content rather than a generative model. A future improvement could add reviewed knowledge-base entries, feedback-driven evaluation cases, or an optional separately configured generative fallback. Such a fallback is not included or required by this project.
